@@ -22,6 +22,9 @@ export function Footer() {
             <p className="text-sm uppercase tracking-wider-2 text-taupe-300 mt-2">
               Clinical Hypnotherapist
             </p>
+            <p className="text-sage-400 italic text-sm mt-0.5 tracking-wide">
+              Truth Within Therapy
+            </p>
             <p className="mt-6 text-ivory-200/80 italic font-serif text-lg leading-relaxed max-w-xs">
               Compassionate support. Deeper understanding. Greater choice.
             </p>

@@ -596,9 +596,10 @@ export function HomePage() {
               <Phone size={18} strokeWidth={1.5} className="flex-shrink-0" />
               <span>760-271-9994</span>
             </a>
-            <a href="mailto:katie.jo.stowell@protonmail.com" className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100 hover:text-gold-200 transition-colors min-w-0">
+            <a href="mailto:katie.jo.stowell@protonmail.com" className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100 hover:text-gold-200 transition-colors">
               <Mail size={18} strokeWidth={1.5} className="flex-shrink-0" />
-              <span className="break-all min-w-0">katie.jo.stowell@protonmail.com</span>
+              <span className="sm:hidden">Send an Email</span>
+              <span className="hidden sm:inline">katie.jo.stowell@protonmail.com</span>
             </a>
             <div className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100">
               <MapPin size={18} strokeWidth={1.5} className="flex-shrink-0" />

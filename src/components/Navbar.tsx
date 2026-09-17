@@ -54,8 +54,11 @@ export function Navbar() {
               <span className="block font-serif text-2xl lg:text-3xl text-charcoal-800 leading-none tracking-wide transition-colors group-hover:text-sage-600">
                 Kathy Stowell
               </span>
-              <span className="block text-[0.625rem] lg:text-[0.6875rem] uppercase tracking-wider-2 text-taupe-500 mt-1">
+              <span className="block text-[0.625rem] lg:text-[0.6875rem] uppercase tracking-wider-2 text-taupe-500 mt-0.5">
                 Clinical Hypnotherapist
+              </span>
+              <span className="block text-[0.6rem] lg:text-[0.625rem] tracking-wider text-sage-500/80 italic mt-0.5">
+                Truth Within Therapy
               </span>
             </button>
 
