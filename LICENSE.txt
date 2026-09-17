@@ -1,0 +1,11 @@
+Copyright (c) 2026 Kathy Stowell
+
+All rights reserved.
+
+This source code and any accidental or intentional distribution of it remain the
+sole property of the copyright holder. No part of this software may be reproduced,
+distributed, modified, or transmitted in any form or by any means, including
+photocopying, recording, or other electronic or mechanical methods, without the
+prior written permission of the copyright holder.
+
+For permission requests, contact: katie.jo.stowell@protonmail.com

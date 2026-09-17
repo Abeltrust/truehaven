@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background-color: #f9f5ec;
+    color: #36322e;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.15;
+    font-weight: 500;
+  }
+
+  ::selection {
+    background-color: #82b577;
+    color: #1b331a;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #d9a030;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* Ivory-dominant hero — colour accents come from floating blur orbs */
+  .hero-grad {
+    background: linear-gradient(135deg, #fdfcf8 0%, #eef6eb 50%, #edf4f9 100%);
+  }
+
+  /* Deeper sage section gradient */
+  .sage-grad {
+    background: linear-gradient(180deg, #eef4ec 0%, #c8e0c3 100%);
+  }
+
+  /* Gold ornament line — brighter */
+  .ornament-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d9a030, transparent);
+  }
+
+  /* Vibrant amber-gold gradient CTA button — contrasts against ivory AND sage backgrounds */
+  .btn-gradient {
+    background: linear-gradient(135deg, #d9a030 0%, #c08820 100%);
+    box-shadow: 0 4px 20px rgba(217, 160, 48, 0.40);
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, #c08820 0%, #a06e18 100%);
+    box-shadow: 0 6px 28px rgba(217, 160, 48, 0.55);
+    transform: translateY(-2px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f2e9d5;
+}
+::-webkit-scrollbar-thumb {
+  background: #82b577;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5f9e52;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .animate-float-slow {
+    animation: none;
+  }
+}
