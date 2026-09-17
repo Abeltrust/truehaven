@@ -2,11 +2,21 @@ import { Phone, Mail, Shield, Heart, HandHeart, Clock, Sparkles, MapPin, ArrowRi
 import { Reveal } from '@/components/Reveal';
 import { Ornament } from '@/components/Ornament';
 import { CTAButton, SectionHeading } from '@/components/ui';
+import type { RoutePath } from '@/router';
 
 const CURTAIN_IMAGE =
   'https://images.pexels.com/photos/8358607/pexels-photo-8358607.jpeg?auto=compress&cs=tinysrgb&w=1200';
 
-const SERVICES = [
+const SERVICES: {
+  badge: string;
+  title: string;
+  price: string;
+  detail: string;
+  features: string[];
+  cta: string;
+  ctaLink: RoutePath;
+  highlight: boolean;
+}[] = [
   {
     badge: 'Complimentary',
     title: '15-Minute Consultation',
@@ -18,7 +28,7 @@ const SERVICES = [
       'Opportunity to explore whether this work feels right for you',
     ],
     cta: 'Schedule a Consultation',
-    ctaLink: '/contact?package=15-minute',
+    ctaLink: '/contact',
     highlight: false,
   },
   {
@@ -32,7 +42,7 @@ const SERVICES = [
       'Time to explore your story at a comfortable pace',
     ],
     cta: 'Schedule a Consultation',
-    ctaLink: '/contact?package=initial',
+    ctaLink: '/contact',
     highlight: true,
   },
   {
@@ -46,7 +56,7 @@ const SERVICES = [
       'Building on the work established in your initial session',
     ],
     cta: 'Schedule a Consultation',
-    ctaLink: '/contact?package=hourly',
+    ctaLink: '/contact',
     highlight: false,
   },
 ];
