@@ -77,7 +77,9 @@ export function ContactPage() {
     if (method === 'email') {
       const subject = encodeURIComponent(buildSubject());
       const body = encodeURIComponent(buildBody());
-      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+      // Open Gmail compose in a new tab (avoids OS default mail app like Outlook)
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(EMAIL)}&su=${subject}&body=${body}`;
+      window.open(gmailUrl, '_blank', 'noopener,noreferrer');
     } else {
       const text = encodeURIComponent(buildWhatsAppText());
       window.open(`https://wa.me/${PHONE}?text=${text}`, '_blank', 'noopener,noreferrer');
