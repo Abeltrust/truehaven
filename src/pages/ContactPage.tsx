@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle2, Clock, ArrowRight, MessageCircle } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
 import { Ornament } from '@/components/Ornament';
@@ -8,8 +8,14 @@ const EUCALYPTUS_IMAGE =
   'https://images.pexels.com/photos/6168329/pexels-photo-6168329.jpeg?auto=compress&cs=tinysrgb&w=1200';
 
 const EMAIL = 'katie.jo.stowell@protonmail.com';
-const PHONE = '7602719994';
+const PHONE = '17602719994'; // E.164 format for WhatsApp API
 const PHONE_DISPLAY = '760-271-9994';
+
+const PACKAGES = [
+  '15-Minute Consultation (Complimentary)',
+  'Initial Session — $225 / 1.5 hrs',
+  'Hourly Sessions — $150 / hr',
+];
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +26,18 @@ export function ContactPage() {
     phone: '',
     message: '',
     preferred: '',
+    package: '',
   });
+
+  // Pre-fill package from ?package= query param (linked from Services page)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const pkg = params.get('package');
+    if (pkg) {
+      const match = PACKAGES.find((p) => p.toLowerCase().startsWith(pkg.toLowerCase()));
+      if (match) setForm((prev) => ({ ...prev, package: match }));
+    }
+  }, []);
 
   const buildSubject = () =>
     `Website enquiry from ${form.name || 'a visitor'}`;
@@ -31,6 +48,7 @@ export function ContactPage() {
       `Email: ${form.email}`,
       form.phone ? `Phone: ${form.phone}` : null,
       form.preferred ? `Preferred contact: ${form.preferred}` : null,
+      form.package ? `Service / Package: ${form.package}` : null,
       '',
       'Message:',
       form.message,
@@ -41,6 +59,7 @@ export function ContactPage() {
   const buildWhatsAppText = () => {
     const parts = [
       `Hello Kathy,`,
+      form.package ? `I'm interested in: ${form.package}` : null,
       '',
       form.message,
       '',
@@ -217,7 +236,7 @@ export function ContactPage() {
                       <button
                         onClick={() => {
                           setSubmitted(false);
-                          setForm({ name: '', email: '', phone: '', message: '', preferred: '' });
+                          setForm({ name: '', email: '', phone: '', message: '', preferred: '', package: '' });
                         }}
                         className="mt-8 text-sage-600 hover:text-sage-700 underline underline-offset-4 transition-colors"
                       >
@@ -274,6 +293,24 @@ export function ContactPage() {
                               placeholder="(000) 000-0000"
                             />
                           </div>
+                        </div>
+
+                        <div>
+                          <label htmlFor="package" className="block text-sm font-medium text-charcoal-700 mb-1.5">
+                            Service / Package *
+                          </label>
+                          <select
+                            id="package"
+                            required
+                            value={form.package}
+                            onChange={(e) => handleChange('package', e.target.value)}
+                            className="w-full rounded-xl border border-ivory-300 bg-ivory-50 px-4 py-3 text-charcoal-800 focus:border-sage-400 focus:bg-white focus:outline-none transition-colors"
+                          >
+                            <option value="">Select a service…</option>
+                            {PACKAGES.map((pkg) => (
+                              <option key={pkg} value={pkg}>{pkg}</option>
+                            ))}
+                          </select>
                         </div>
 
                         <div>

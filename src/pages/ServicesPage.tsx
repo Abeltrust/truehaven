@@ -18,6 +18,7 @@ const SERVICES = [
       'Opportunity to explore whether this work feels right for you',
     ],
     cta: 'Schedule a Consultation',
+    ctaLink: '/contact?package=15-minute',
     highlight: false,
   },
   {
@@ -31,6 +32,7 @@ const SERVICES = [
       'Time to explore your story at a comfortable pace',
     ],
     cta: 'Schedule a Consultation',
+    ctaLink: '/contact?package=initial',
     highlight: true,
   },
   {
@@ -44,6 +46,7 @@ const SERVICES = [
       'Building on the work established in your initial session',
     ],
     cta: 'Schedule a Consultation',
+    ctaLink: '/contact?package=hourly',
     highlight: false,
   },
 ];
@@ -167,7 +170,7 @@ export function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <CTAButton to="/contact" variant="secondary" className="w-full">
+                  <CTAButton to={svc.ctaLink} variant="secondary" className="w-full">
                     {svc.cta}
                   </CTAButton>
                 </div>
