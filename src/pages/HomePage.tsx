@@ -591,17 +591,17 @@ export function HomePage() {
       {/* Quick contact bar */}
       <section className="bg-gradient-to-r from-sage-700 to-sage-800 py-10">
         <div className="mx-auto max-w-8xl px-6 lg:px-12">
-          <div className="grid sm:grid-cols-3 gap-6 text-center sm:text-left">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 sm:gap-6 text-center sm:text-left">
             <a href="tel:7602719994" className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100 hover:text-gold-200 transition-colors">
-              <Phone size={18} strokeWidth={1.5} />
+              <Phone size={18} strokeWidth={1.5} className="flex-shrink-0" />
               <span>760-271-9994</span>
             </a>
-            <a href="mailto:katie.jo.stowell@protonmail.com" className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100 hover:text-gold-200 transition-colors break-all">
-              <Mail size={18} strokeWidth={1.5} />
-              <span>katie.jo.stowell@protonmail.com</span>
+            <a href="mailto:katie.jo.stowell@protonmail.com" className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100 hover:text-gold-200 transition-colors min-w-0">
+              <Mail size={18} strokeWidth={1.5} className="flex-shrink-0" />
+              <span className="break-all min-w-0">katie.jo.stowell@protonmail.com</span>
             </a>
             <div className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100">
-              <MapPin size={18} strokeWidth={1.5} />
+              <MapPin size={18} strokeWidth={1.5} className="flex-shrink-0" />
               <span>San Diego, CA 92024</span>
             </div>
           </div>
