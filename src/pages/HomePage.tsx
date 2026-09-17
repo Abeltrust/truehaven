@@ -192,7 +192,7 @@ export function HomePage() {
             {[
               { num: '20+', label: 'Years of Private Practice' },
               { num: '2003', label: 'Clinical Hypnotherapist Since' },
-              { num: 'RN', label: 'Background in Psychiatric Nursing' },
+              { num: 'LPT', label: 'Background in Psychiatric Nursing' },
             ].map((item, i) => (
               <Reveal key={item.label} delay={(i + 1) as 1 | 2 | 3}>
                 <div className="text-center">
@@ -223,7 +223,7 @@ export function HomePage() {
                   className="rounded-[2rem] shadow-xl shadow-charcoal-200/30 w-full h-[320px] sm:h-[420px] lg:h-[500px]"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg">
-                  <p className="font-serif text-xl text-sage-600">Santa Cruz, California</p>
+                  <p className="font-serif text-xl text-sage-600">San Diego, CA 92024</p>
                   <p className="text-sm text-taupe-500 mt-1">Private Practice</p>
                 </div>
               </div>
@@ -602,7 +602,7 @@ export function HomePage() {
             </a>
             <div className="flex items-center justify-center sm:justify-start gap-3 text-ivory-100">
               <MapPin size={18} strokeWidth={1.5} />
-              <span>Santa Cruz, USA</span>
+              <span>San Diego, CA 92024</span>
             </div>
           </div>
         </div>

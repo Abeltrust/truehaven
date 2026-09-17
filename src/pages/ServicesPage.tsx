@@ -257,7 +257,7 @@ export function ServicesPage() {
                   </a>
                   <div className="flex items-center gap-3 text-charcoal-600">
                     <MapPin size={18} strokeWidth={1.5} className="text-sage-500" />
-                    <span>Santa Cruz, USA</span>
+                    <span>San Diego, CA 92024</span>
                   </div>
                 </div>
               </Reveal>

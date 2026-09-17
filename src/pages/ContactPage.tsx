@@ -162,7 +162,7 @@ export function ContactPage() {
                         <p className="text-xs uppercase tracking-wider text-taupe-400 mb-1 flex items-center gap-2">
                           <MapPin size={13} className="text-sage-500" /> Location
                         </p>
-                        <p className="text-charcoal-700">Santa Cruz, USA</p>
+                        <p className="text-charcoal-700">San Diego, CA 92024</p>
                       </div>
 
                       <div>

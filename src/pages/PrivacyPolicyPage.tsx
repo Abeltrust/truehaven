@@ -35,7 +35,7 @@ export function PrivacyPolicyPage() {
                 <h2 className="font-serif text-2xl text-charcoal-800 mb-3">1. Who We Are</h2>
                 <p>
                   This website is operated by Kathy Stowell (Katie Jo Stowell), a Clinical Hypnotherapist
-                  practising privately in Santa Cruz, California. If you have any questions about this
+                  practising privately in San Diego, CA 92024. If you have any questions about this
                   policy or how your data is handled, you may contact Kathy directly at{' '}
                   <a href="mailto:katie.jo.stowell@protonmail.com" className="text-sage-600 underline underline-offset-4 hover:text-sage-700 transition-colors">
                     katie.jo.stowell@protonmail.com

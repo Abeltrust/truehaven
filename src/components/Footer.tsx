@@ -65,7 +65,7 @@ export function Footer() {
                   760-271-9994
                 </a>
               </li>
-              <li>Santa Cruz, USA</li>
+              <li>San Diego, CA 92024</li>
             </ul>
           </div>
         </div>
